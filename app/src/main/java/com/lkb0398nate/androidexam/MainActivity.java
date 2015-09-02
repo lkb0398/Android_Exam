@@ -53,6 +53,8 @@ public class MainActivity extends ListActivity {
 
         // 메뉴 추가 부분
 //        addItem(myData, "TransitionDrawable", TransitionDrawableExamActivity.class);
+        addItem(myData, "FramLayout", FramLayoutActivity.class);
+
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
