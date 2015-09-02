@@ -39,7 +39,7 @@ public class FramLayoutActivity extends AppCompatActivity {
 
             mImageView2.setVisibility(View.VISIBLE);
 
-        } else if (mImageView2.getVisibility() == View.VISIBLE) {
+        } else  {
 
             mImageView2.setVisibility(View.INVISIBLE);
 
