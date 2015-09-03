@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.lkb0398nate.androidexam.mission.Mission01Activity;
+import com.lkb0398nate.androidexam.mission.Mission02Activity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class MainActivity extends ListActivity {
 //        addItem(myData, "TransitionDrawable", TransitionDrawableExamActivity.class);
         addItem(myData, "FramLayout", FramLayoutActivity.class);
         addItem(myData, "up, down", Mission01Activity.class);
+        addItem(myData, "Mission2", Mission02Activity.class);
 
         // ----- 메뉴 추가 여기까지
 
