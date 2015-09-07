@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lkb0398nate.androidexam" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,16 +30,21 @@
             android:label="@string/title_activity_mission02" />
         <activity
             android:name=".mission.Mission03Activity"
-            android:label="@string/title_activity_mission03"></activity>
+            android:label="@string/title_activity_mission03" />
         <activity
             android:name=".mission.Mission03_menuActivity"
-            android:label="@string/title_activity_mission03_menu"></activity>
+            android:label="@string/title_activity_mission03_menu" />
         <activity
             android:name=".Activity.ActivityExamActivity"
-            android:label="@string/title_activity_activity_exam"></activity>
+            android:label="@string/title_activity_activity_exam" />
         <activity
             android:name=".Activity.TargetActivity"
-            android:label="@string/title_activity_target"></activity>
+            android:label="@string/title_activity_target" />
+        <activity
+            android:name=".Activity.WebActivity"
+            android:label="@string/title_activity_web"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
