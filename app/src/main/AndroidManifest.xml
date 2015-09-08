@@ -43,7 +43,14 @@
         <activity
             android:name=".Activity.WebActivity"
             android:label="@string/title_activity_web"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".Animation.AnimationActivty" />
+        <activity
+            android:name=".mission.Mission05Activity"
+            android:label="@string/title_activity_mission05"></activity>
+        <activity
+            android:name=".Calendar.CalendarActivity"
+            android:label="@string/title_activity_calendar">
         </activity>
     </application>
 

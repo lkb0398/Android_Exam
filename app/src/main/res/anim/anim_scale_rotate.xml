@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    Animation fadeIn = new AlphaAnimation(0, 1);
+    fadeIn.setDuration(1000);
+
+    Animation fadeOut = new AlphaAnimation(1, 0);
+    fadeOut.setStartOffset(1000);
+    fadeOut.setDuration(1000);
+
+    AnimationSet animation = new AnimationSet(true);
+    animation.addAnimation(fadeIn);
+    animation.addAnimation(fadeOut);
+    this.setAnimation(animation);
+
+</set>

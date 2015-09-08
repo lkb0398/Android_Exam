@@ -22,19 +22,19 @@ public class WebActivity extends AppCompatActivity implements View.OnKeyListener
         setContentView(R.layout.activity_web);
 
         mWebView = (WebView) findViewById(R.id.web_view);
-        mAddress = (EditText)findViewById(R.id.et_web_address);
+        mAddress = (EditText) findViewById(R.id.et_web_address);
 
         mWebView.setWebViewClient(new WebViewClient());
         mWebView.getSettings().setJavaScriptEnabled(true);
 
         mAddress.setOnKeyListener(this);
 
-
     }
 
     private void loadUrl(String url) {
         mWebView.loadUrl(url);
     }
+
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
@@ -43,6 +43,6 @@ public class WebActivity extends AppCompatActivity implements View.OnKeyListener
 
             return true;
         }
-            return false;
+        return false;
     }
 }

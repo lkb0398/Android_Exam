@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.lkb0398nate.androidexam.mission.Mission05Activity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름" />
+
+        <EditText
+            android:id="@+id/n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="이름을 적으시오." />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나이" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="나이를 적으시오." />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생년월일"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/birthday_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        android:textSize="50dp" />
+</LinearLayout>

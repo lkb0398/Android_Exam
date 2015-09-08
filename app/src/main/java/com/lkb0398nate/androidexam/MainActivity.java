@@ -10,9 +10,11 @@ import android.widget.SimpleAdapter;
 
 import com.lkb0398nate.androidexam.Activity.ActivityExamActivity;
 import com.lkb0398nate.androidexam.Activity.WebActivity;
+import com.lkb0398nate.androidexam.Animation.AnimationActivty;
 import com.lkb0398nate.androidexam.mission.Mission01Activity;
 import com.lkb0398nate.androidexam.mission.Mission02Activity;
 import com.lkb0398nate.androidexam.mission.Mission03Activity;
+import com.lkb0398nate.androidexam.mission.Mission05Activity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -65,6 +67,8 @@ public class MainActivity extends ListActivity {
         addItem(myData, "Mission03", Mission03Activity.class);
         addItem(myData, "화면이동 예쩨", ActivityExamActivity.class);
         addItem(myData, "Web_View 연습", WebActivity.class);
+        addItem(myData, "애니메이션 연습", AnimationActivty.class);
+        addItem(myData, "Mission05", Mission05Activity.class);
 
         // ----- 메뉴 추가 여기까지
 
