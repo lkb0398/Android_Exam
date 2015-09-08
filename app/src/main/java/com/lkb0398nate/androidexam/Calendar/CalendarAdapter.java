@@ -37,7 +37,7 @@ public class CalendarAdapter extends BaseAdapter {
         // 오늘 날짜
 
         int lastDay = calendar.getActualMaximum(Calendar.DATE);
-        int month = calendar.get(Calendar.MONTH) + 1;
+        int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
 
         // 이번 달 첫 번째 날.
@@ -108,13 +108,6 @@ public class CalendarAdapter extends BaseAdapter {
 
             holder.dateTextView = (TextView) convertView.findViewById(R.id.tv_date);
 
-            if (position % 7 == 0) {
-                holder.dateTextView.setTextColor(Color.RED);
-
-            } else if ((position + 7) % 6 == 0) {
-                holder.dateTextView.setTextColor(Color.BLUE);
-            }
-
             convertView.setTag(holder);
         } else {
             // 재사용
@@ -125,8 +118,17 @@ public class CalendarAdapter extends BaseAdapter {
 
         Calendar calendar = mList.get(position);
         if (calendar != null) {
-
             holder.dateTextView.setText("" + calendar.get(Calendar.DATE));
+
+            if (position % 7 == 0) {
+                holder.dateTextView.setTextColor(Color.RED);
+
+            } else if ((position + 1) % 7 == 0) {
+                holder.dateTextView.setTextColor(Color.BLUE);
+
+            } else {
+                holder.dateTextView.setTextColor(Color.BLACK);
+            }
         } else {
 
             holder.dateTextView.setText("");
