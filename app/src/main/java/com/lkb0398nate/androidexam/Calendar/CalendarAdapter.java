@@ -22,6 +22,16 @@ public class CalendarAdapter extends BaseAdapter {
     private Context mContext;
     private Calendar mCalendar;
 
+    private int mSelectedPosition = -1;
+
+    public int getSelectedPosition() {
+        return mSelectedPosition;
+    }
+
+    public void setSelectedPosition(int selectedPosition) {
+        this.mSelectedPosition = selectedPosition;
+    }
+
 
     public CalendarAdapter(Context context) {
 
@@ -72,6 +82,7 @@ public class CalendarAdapter extends BaseAdapter {
     private void changeMonth(int month) {
         mCalendar.add(Calendar.MONTH, month);
         createCalendar(mCalendar);
+        mSelectedPosition = -1;
 
         // 어뎁터에 바뀐 데이터를 반영하도록 알려 줌
         notifyDataSetChanged();
@@ -132,6 +143,13 @@ public class CalendarAdapter extends BaseAdapter {
         } else {
 
             holder.dateTextView.setText("");
+        }
+
+        // 선택 된 셀의 색상변경 부분.
+        if (position == mSelectedPosition) {
+            convertView.setBackgroundColor(Color.YELLOW);
+        } else {
+            convertView.setBackgroundColor(Color.WHITE);
         }
 
         return convertView;

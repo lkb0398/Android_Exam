@@ -18,7 +18,7 @@
             android:text="이름" />
 
         <EditText
-            android:id="@+id/n"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="이름을 적으시오." />
@@ -36,6 +36,7 @@
             android:text="나이" />
 
         <EditText
+            android:id="@+id/old"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="나이를 적으시오." />
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/start_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="저장"

@@ -1,6 +1,7 @@
 
 package com.lkb0398nate.androidexam.mission;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -55,7 +56,12 @@ public class Mission03_menuActivity extends AppCompatActivity implements View.On
     private void openDialog(String title) {
         AlertDialog.Builder builder = new AlertDialog.Builder(Mission03_menuActivity.this);
         builder.setTitle(title);
-        builder.setNegativeButton("닫기", null);
+        builder.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Mission03_menuActivity.this.finish();
+            }
+        });
         builder.show();
     }
 

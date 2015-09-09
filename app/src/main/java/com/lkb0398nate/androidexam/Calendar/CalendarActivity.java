@@ -4,13 +4,15 @@ package com.lkb0398nate.androidexam.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.lkb0398nate.androidexam.R;
 
 import java.util.Calendar;
 
-public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
+public class CalendarActivity extends AppCompatActivity implements View.OnClickListener,
+        AdapterView.OnItemClickListener {
 
     private CalendarAdapter mCalendarAdapter;
     private CalendarView mCalendarView;
@@ -33,6 +35,9 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         // View 에 어댑터를 설정
         mCalendarView = (CalendarView) findViewById(R.id.calendar);
         mCalendarView.setAdapter(mCalendarAdapter);
+
+        // 이벤트 리스너 연결
+        mCalendarView.setOnItemClickListener(this);
 
     }
 
@@ -59,5 +64,13 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         int month = mCalendarAdapter.getCalendar().get(Calendar.MONTH) + 1;
         int year = mCalendarAdapter.getCalendar().get(Calendar.YEAR);
         mTitleText.setText(year + "년" + month + "월");
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mCalendarAdapter.setSelectedPosition(position);
+
+        // 다시 그려 주세요
+        mCalendarAdapter.notifyDataSetChanged();
     }
 }
