@@ -1,5 +1,5 @@
 
-package com.lkb0398nate.androidexam.Calendar;
+package com.lkb0398nate.androidexam.Calendar.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -31,6 +31,7 @@ public class CalendarAdapter extends BaseAdapter {
     public void setSelectedPosition(int selectedPosition) {
         this.mSelectedPosition = selectedPosition;
     }
+
 
 
     public CalendarAdapter(Context context) {
