@@ -18,6 +18,8 @@ import com.lkb0398nate.androidexam.mission.Mission02Activity;
 import com.lkb0398nate.androidexam.mission.Mission03Activity;
 import com.lkb0398nate.androidexam.mission.Mission05Activity;
 import com.lkb0398nate.androidexam.mission.extra.ListView_Activity;
+import com.lkb0398nate.androidexam.parsing.json.WeatherActivity;
+import com.lkb0398nate.androidexam.thread.ThreadActivity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -75,6 +77,8 @@ public class MainActivity extends ListActivity {
         addItem(myData, "Calendar", CalendarActivity.class);
         addItem(myData, "달력2", Calendar2Activity.class);
         addItem(myData, "리스트뷰", ListView_Activity.class);
+        addItem(myData, "Thread", ThreadActivity.class);
+        addItem(myData, "json", WeatherActivity.class);
 
         // ----- 메뉴 추가 여기까지
 

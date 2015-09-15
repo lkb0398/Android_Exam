@@ -53,11 +53,16 @@
         <activity android:name=".Calendar2.Calendar2Activity" />
         <activity
             android:name=".mission.Mission08Activity"
-            android:label="@string/title_activity_mission08"></activity>
+            android:label="@string/title_activity_mission08" />
         <activity
             android:name=".mission.extra.ListView_Activity"
-            android:label="@string/title_activity_list_view_">
+            android:label="@string/title_activity_list_view_" >
         </activity>
+        <activity
+            android:name=".thread.ThreadActivity"
+            android:label="@string/title_activity_thread" >
+        </activity>
+        <activity android:name=".parsing.json.WeatherActivity" />
     </application>
 
 </manifest>
