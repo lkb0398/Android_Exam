@@ -36,7 +36,6 @@ public class WeatherActivity extends Activity implements View.OnKeyListener {
 
     private ProgressBar mProgressBar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +54,6 @@ public class WeatherActivity extends Activity implements View.OnKeyListener {
 
     }
 
-
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
@@ -66,7 +64,7 @@ public class WeatherActivity extends Activity implements View.OnKeyListener {
         return false;
     }
 
-    class WeatherInfoLoadTask extends AsyncTask <String, Void, Void> {
+    class WeatherInfoLoadTask extends AsyncTask<String, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -106,11 +104,9 @@ public class WeatherActivity extends Activity implements View.OnKeyListener {
 
                 mAdapter = new WeatherAdapter(WeatherActivity.this, weatherList);
 
-
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
             }
-
 
             return null;
         }

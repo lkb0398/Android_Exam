@@ -16,4 +16,5 @@
     <string name="title_activity_mission08">Mission08Activity</string>
     <string name="title_activity_list_view_">ListView_Activity</string>
     <string name="title_activity_thread">ThreadActivity</string>
+    <string name="title_activity_fragment">FragmentActivity</string>
 </resources>

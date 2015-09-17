@@ -13,6 +13,8 @@ import com.lkb0398nate.androidexam.Activity.WebActivity;
 import com.lkb0398nate.androidexam.Animation.AnimationActivty;
 import com.lkb0398nate.androidexam.Calendar.CalendarActivity;
 import com.lkb0398nate.androidexam.Calendar2.Calendar2Activity;
+import com.lkb0398nate.androidexam.Fragment.FragmentActivity;
+import com.lkb0398nate.androidexam.graphic.GraphicActivity;
 import com.lkb0398nate.androidexam.mission.Mission01Activity;
 import com.lkb0398nate.androidexam.mission.Mission02Activity;
 import com.lkb0398nate.androidexam.mission.Mission03Activity;
@@ -65,7 +67,8 @@ public class MainActivity extends ListActivity {
         List<Map<String, Object>> myData = new ArrayList<>();
 
         // 메뉴 추가 부분
-//        addItem(myData, "TransitionDrawable", TransitionDrawableExamActivity.class);
+        // addItem(myData, "TransitionDrawable",
+        // TransitionDrawableExamActivity.class);
         addItem(myData, "FramLayout", FramLayoutActivity.class);
         addItem(myData, "up, down", Mission01Activity.class);
         addItem(myData, "Mission02", Mission02Activity.class);
@@ -79,6 +82,8 @@ public class MainActivity extends ListActivity {
         addItem(myData, "리스트뷰", ListView_Activity.class);
         addItem(myData, "Thread", ThreadActivity.class);
         addItem(myData, "json", WeatherActivity.class);
+        addItem(myData, "Fragment", FragmentActivity.class);
+        addItem(myData, "ShapeView", GraphicActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
