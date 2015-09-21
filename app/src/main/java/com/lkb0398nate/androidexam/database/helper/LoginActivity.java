@@ -2,14 +2,12 @@
 package com.lkb0398nate.androidexam.database.helper;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
 import com.lkb0398nate.androidexam.R;
-import com.lkb0398nate.androidexam.database.contract.UserContract;
 
 /**
  * Created by kb on 2015-09-18.
@@ -41,28 +39,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 // long insertedId = mUserDbHelper.inser("test", "test",
                 // "test");
 
-                int count = mUserDbHelper.update("test", "테스트");
-                if (count != 0) {
-                    Toast.makeText(LoginActivity.this, "update 성공" + count, Toast.LENGTH_SHORT).show();
-                }
+//                int count = mUserDbHelper.update("test", "테스트");
 
-                Cursor cursor = mUserDbHelper.query();
+                if (mUserDbHelper.delete("test")) {
+                    Toast.makeText(LoginActivity.this, "Delete 성공", Toast.LENGTH_SHORT).show();
 
-                if (cursor != null) {
-
-                    cursor.moveToFirst();
-
-                    while (cursor.moveToNext()) {
-
-                        long itemId = cursor.getLong(cursor
-                                .getColumnIndexOrThrow(UserContract.UserEntry._ID));
-
-                        Toast.makeText(LoginActivity.this, "성공" + itemId, Toast.LENGTH_SHORT)
-                                .show();
-
-                    }
                 } else {
-                    Toast.makeText(LoginActivity.this, "실패", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, " Delete 실패", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
