@@ -14,6 +14,7 @@ import com.lkb0398nate.androidexam.Animation.AnimationActivty;
 import com.lkb0398nate.androidexam.Calendar.CalendarActivity;
 import com.lkb0398nate.androidexam.Calendar2.Calendar2Activity;
 import com.lkb0398nate.androidexam.Fragment.FragmentActivity;
+import com.lkb0398nate.androidexam.database.helper.LoginActivity;
 import com.lkb0398nate.androidexam.graphic.GraphicActivity;
 import com.lkb0398nate.androidexam.mission.Mission01Activity;
 import com.lkb0398nate.androidexam.mission.Mission02Activity;
@@ -84,6 +85,7 @@ public class MainActivity extends ListActivity {
         addItem(myData, "json", WeatherActivity.class);
         addItem(myData, "Fragment", FragmentActivity.class);
         addItem(myData, "ShapeView", GraphicActivity.class);
+        addItem(myData, "Login", LoginActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
