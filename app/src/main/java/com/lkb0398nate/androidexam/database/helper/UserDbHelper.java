@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.lkb0398nate.androidexam.database.contract.UserContract;
+import com.lkb0398nate.androidexam.database.contract.ScheduleContract;
 
 /**
  * Created by kb on 2015-09-18. 내가 만들었다.
@@ -17,11 +17,11 @@ public class UserDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "User.db";
     public static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_ENTRIES = " CREATE TABLE "
-            + UserContract.UserEntry.TABLE_NAME + " (" +
-            " " + UserContract.UserEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            " " + UserContract.UserEntry.COLUMN_NAME_NICKNAME + " TEXT NOT NULL, " +
-            " " + UserContract.UserEntry.COLUMN_NAME_EMAIL + " TEXT NOT NULL UNIQUE, " +
-            " " + UserContract.UserEntry.COLUMN_NAME_PASSWORD + " TEXT NOT NULL " +
+            + ScheduleContract.ScheduleEntry.TABLE_NAME + " (" +
+            " " + ScheduleContract.ScheduleEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            " " + ScheduleContract.ScheduleEntry.COLUMN_NAME_HOUR + " TEXT NOT NULL, " +
+            " " + ScheduleContract.ScheduleEntry.COLUMN_NAME_MINUTE + " TEXT NOT NULL UNIQUE, " +
+            " " + ScheduleContract.ScheduleEntry.COLUMN_NAME_CONTENTS + " TEXT NOT NULL " +
             ");";
 
     public UserDbHelper(Context context) {
@@ -40,19 +40,19 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
     }
 
-    public long inser(String nickname, String email, String password) {
+    public long insert(String nickname, String email, String password) {
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(UserContract.UserEntry.COLUMN_NAME_NICKNAME, nickname);
-        values.put(UserContract.UserEntry.COLUMN_NAME_EMAIL, email);
-        values.put(UserContract.UserEntry.COLUMN_NAME_PASSWORD, password);
+        values.put(ScheduleContract.ScheduleEntry.COLUMN_NAME_HOUR, nickname);
+        values.put(ScheduleContract.ScheduleEntry.COLUMN_NAME_MINUTE, email);
+        values.put(ScheduleContract.ScheduleEntry.COLUMN_NAME_CONTENTS, password);
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
-        newRowId = db.insert(UserContract.UserEntry.TABLE_NAME, null, values);
+        newRowId = db.insert(ScheduleContract.ScheduleEntry.TABLE_NAME, null, values);
 
         return newRowId;
     }
@@ -66,14 +66,14 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
         // 컬럼명 정의
         String[] projection = {
-                UserContract.UserEntry._ID,
-                UserContract.UserEntry.COLUMN_NAME_NICKNAME,
-                UserContract.UserEntry.COLUMN_NAME_EMAIL,
-                UserContract.UserEntry.COLUMN_NAME_PASSWORD
+                ScheduleContract.ScheduleEntry._ID,
+                ScheduleContract.ScheduleEntry.COLUMN_NAME_HOUR,
+                ScheduleContract.ScheduleEntry.COLUMN_NAME_MINUTE,
+                ScheduleContract.ScheduleEntry.COLUMN_NAME_CONTENTS
         };
 
         Cursor c = db.query(
-                UserContract.UserEntry.TABLE_NAME, // 테이블 명
+                ScheduleContract.ScheduleEntry.TABLE_NAME, // 테이블 명
                 projection, // 컬럼명 배열
                 null, // WHERE 절의 컬럼명
                 null, // WHERE 절의 값
@@ -92,17 +92,17 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
         // 패스워드 변경
         ContentValues values = new ContentValues();
-        values.put(UserContract.UserEntry.COLUMN_NAME_PASSWORD, newPassword);
+        values.put(ScheduleContract.ScheduleEntry.COLUMN_NAME_CONTENTS, newPassword);
 
         // E-mail 이 ? 와 같다면
-        String selection = UserContract.UserEntry.COLUMN_NAME_EMAIL + " = ?";
+        String selection = ScheduleContract.ScheduleEntry.COLUMN_NAME_MINUTE + " = ?";
         // ? 에 들어갈 값을 바인딩.
         String[] selectionArgs = {
                 String.valueOf(email)
         };
 
         int count = db.update(
-                UserContract.UserEntry.TABLE_NAME,
+                ScheduleContract.ScheduleEntry.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -116,10 +116,10 @@ public class UserDbHelper extends SQLiteOpenHelper {
         db.execSQL("Delete .....");
 
         // Define 'where' part of query.
-        String selection = UserContract.UserEntry.COLUMN_NAME_EMAIL + " = '" + email + "'";
+        String selection = ScheduleContract.ScheduleEntry.COLUMN_NAME_MINUTE + " = '" + email + "'";
         // 지울 조건
         // Issue SQL statement.
-        int deleted = db.delete(UserContract.UserEntry.TABLE_NAME, selection, null);
+        int deleted = db.delete(ScheduleContract.ScheduleEntry.TABLE_NAME, selection, null);
 
         return deleted == 0;
     }
