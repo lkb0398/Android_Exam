@@ -12,7 +12,7 @@ import com.lkb0398nate.androidexam.database.contract.ScheduleContract;
 /**
  * Created by kb on 2015-09-18. 내가 만들었다.
  */
-public class UserDbHelper extends SQLiteOpenHelper {
+public class ParseLoginHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "User.db";
     public static final int DATABASE_VERSION = 1;
@@ -24,7 +24,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
             " " + ScheduleContract.ScheduleEntry.COLUMN_NAME_CONTENTS + " TEXT NOT NULL " +
             ");";
 
-    public UserDbHelper(Context context) {
+    public ParseLoginHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

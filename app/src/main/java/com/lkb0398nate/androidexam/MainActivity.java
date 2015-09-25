@@ -22,6 +22,8 @@ import com.lkb0398nate.androidexam.mission.Mission03Activity;
 import com.lkb0398nate.androidexam.mission.Mission05Activity;
 import com.lkb0398nate.androidexam.mission.extra.ListView_Activity;
 import com.lkb0398nate.androidexam.parsing.json.WeatherActivity;
+import com.lkb0398nate.androidexam.provider.ContactLoaderActivity;
+import com.lkb0398nate.androidexam.provider.LoadPictureActivity;
 import com.lkb0398nate.androidexam.thread.ThreadActivity;
 
 import java.text.Collator;
@@ -86,6 +88,8 @@ public class MainActivity extends ListActivity {
         addItem(myData, "Fragment", FragmentActivity.class);
         addItem(myData, "ShapeView", GraphicActivity.class);
         addItem(myData, "Login", LoginActivity.class);
+        addItem(myData, "content provider", ContactLoaderActivity.class);
+        addItem(myData, "LoadPicture", LoadPictureActivity.class);
 
         // ----- 메뉴 추가 여기까지
 

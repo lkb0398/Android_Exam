@@ -16,7 +16,7 @@ import com.lkb0398nate.androidexam.database.contract.ScheduleContract;
  * Created by kb on 2015-09-18.
  */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    private UserDbHelper mUserDbHelper;
+    private ParseLoginHelper mParseLoginHelper;
     private EditText mEmail;
     private EditText mPassword;
 
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.tv_sign_up).setOnClickListener(this);
         findViewById(R.id.btn_login).setOnClickListener(this);
 
-        mUserDbHelper = new UserDbHelper(this);
+        mParseLoginHelper = new ParseLoginHelper(this);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_login:
                 // TODO 로그인처리
 
-                UserDbHelper helper = new UserDbHelper(this);
+                ParseLoginHelper helper = new ParseLoginHelper(this);
                 Cursor cursor = helper.query();
 
                 if (cursor != null) {

@@ -42,7 +42,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         // 가입처리
-        UserDbHelper helper = new UserDbHelper(this);
+        ParseLoginHelper helper = new ParseLoginHelper(this);
 
         long inserted = helper.insert(mNickname.getText().toString(), mEmail.getText().toString(),
                 mPassword.getText().toString());
